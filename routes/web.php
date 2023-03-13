@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ShipController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [IndexController::class, 'index'])->name('home');
+
+Route::get('/ships', [ShipController::class, 'index'])->name('ships.index');
+Route::get('/ships{id}', [ShipController::class, 'show'])->name('ships.show');
