@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
-@section('title', 'Статьи')
-@include('partials.header')
-@section('content')
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-1 mb-2">
-        @each('partials.posts.item', $ships, 'ship')
-    </div>
-    <div class="flex justify-around mb-5">
-        {{ $ships->links() }}
-    </div>
+@section('title', 'Каталог')
 
+@section('header')
+    @include('partials.header')
+@endsection
+
+@section('content')
+    <main class="flex-1 container mx-auto bg-white overflow-hidden px-4 sm:px-6">
+        <div class="py-4 pb-8">
+            <h1 class="text-black text-3xl font-bold mb-4">Каталог</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                @each('partials.ships.item', $ships, 'ship')
+            </div>
+        </div>
+        <div class="flex justify-around mb-5">
+            {{ $ships->links() }}
+        </div>
+    </main>
 @endsection

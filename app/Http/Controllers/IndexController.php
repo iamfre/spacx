@@ -14,4 +14,9 @@ class IndexController extends Controller
             'ships' => $ships,
         ]);
     }
+
+    public function contacts()
+    {
+        return view('contacts');
+    }
 }

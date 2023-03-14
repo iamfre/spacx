@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Ship;
 
-class ShipController extends Controller
+class CatalogController extends Controller
 {
     public function index()
     {
-        $ships = Ship::query()->orderBy('created_at', 'DESC')->paginate(4);
+        $ships = Ship::query()->orderBy('created_at', 'DESC')->paginate(3);
 
         return view('catalog.index', [
             'ships' => $ships,
