@@ -31,7 +31,7 @@
                 @guest()
                     <ul class="flex justify-center sm:justify-end items-center space-x-8 text-sm">
                         <li>
-                            <a class="text-gray-500 hover:text-orange" href="#">
+                            <a class="text-gray-500 hover:text-orange" href="{{ route('registration') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block text-orange h-4 w-4"
                                      fill="currentColor" viewBox="0 0 26 26" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="text-gray-500 hover:text-orange" href="#">
+                            <a class="text-gray-500 hover:text-orange" href="{{ route('login') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block text-orange h-4 w-4"
                                      viewBox="0 0 22 22" fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -60,10 +60,10 @@
         <div class="container mx-auto overflow-hidden px-4 sm:px-6">
             <section class="bg-white py-4">
                 <ul class="list-inside bullet-list-item flex flex-wrap justify-between -mx-5 -my-2">
-                    <li class="px-5 py-2"><a class="text-orange cursor-default" href="{{ route('home') }}">Главная</a></li>
-                    <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="#">Статьи</a></li>
-                    <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="{{ route('catalog.index') }}">Каталог</a></li>
-                    <li class="px-5 py-2"><a class="text-gray-600 hover:text-orange" href="{{ route('contacts') }}">Контакты</a></li>
+                    <li class="px-5 py-2"><a class="{{ Request::is('/') ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange' }}" href="{{ route('home') }}">Главная</a></li>
+                    <li class="px-5 py-2"><a class="{{ Request::is('article') ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange' }}" href="#">Статьи</a></li>
+                    <li class="px-5 py-2"><a class="{{ Request::is('catalog') ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange' }}" href="{{ route('catalog.index') }}">Каталог</a></li>
+                    <li class="px-5 py-2"><a class="{{ Request::is('contacts') ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange' }}" href="{{ route('contacts') }}">Контакты</a></li>
                 </ul>
             </section>
         </div>
