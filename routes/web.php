@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,8 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/registration', [AuthController::class, 'registration'])->name('registration');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
 
 Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
 Route::get('/catalog{id}', [CatalogController::class, 'show'])->name('catalog.show');
