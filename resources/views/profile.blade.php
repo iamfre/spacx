@@ -10,7 +10,13 @@
     <main class="flex-1 container mx-auto bg-white overflow-hidden px-4 sm:px-6">
         <div class="py-4 pb-8 space-y-2">
             <h1 class="text-black text-3xl font-bold mb-4">Личный кабинет</h1>
-
+            @if(session('success'))
+                <div class="my-4">
+                    <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">
+                        <p>{{ session('success') }}</p>
+                    </div>
+                </div>
+            @endif
             <div class="space-y-2">
                 <div class="space-y-2 pb-4 border-b">
                     <p class="text-xl">Мои профиль</p>

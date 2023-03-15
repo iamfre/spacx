@@ -21,9 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/contacts', [IndexController::class, 'contacts'])->name('contacts');
 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/registration', [AuthController::class, 'showRegisterForm'])->name('registration');
+Route::post('/registration', [AuthController::class, 'register']);
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/registration', [AuthController::class, 'registration'])->name('registration');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth')->name('profile');

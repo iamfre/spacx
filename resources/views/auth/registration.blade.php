@@ -11,69 +11,74 @@
         <div class="py-4 pb-8">
             <h1 class="text-black text-3xl font-bold mb-4">Регистрация</h1>
 
-            <div class="my-4">
-                <div class="px-4 py-3 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
-                    <p>Пример вывода текста ошибки</p>
-                </div>
-            </div>
+            {{--            <div class="my-4">--}}
+            {{--                <div class="px-4 py-3 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">--}}
+            {{--                    <p>Поле email обязательно для заполнения</p>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
-            <div class="my-4">
-                <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">
-                    <p>Пример вывода успешного сообщения</p>
-                </div>
-            </div>
+            {{--            <div class="my-4">--}}
+            {{--                <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">--}}
+            {{--                    <p>Вы успешно зарегистрированы</p>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
-            <form>
+            <form action="{{ route('registration') }}" method="post">
+                @csrf
                 <div class="mt-8 max-w-md">
                     <div class="grid grid-cols-1 gap-6">
                         <div class="block">
-                            <label for="field1" class="text-gray-700 font-bold">Текстовое поле</label>
-                            <input id="field1" type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="">
+                            <label for="fieldName" class="text-gray-700 font-bold">Имя</label>
+                            <input id="fieldName" name="name" type="text"
+                                   class="mt-1 block w-full rounded-md border-gray-300 @error('name') border-red-600 @enderror shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                   value="{{ old('name') }}" placeholder="Илон Маск">
+                            @error('name')
+                            <span class="text-xs italic text-red-600">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="block">
-                            <label for="field2" class="text-gray-700 font-bold">Пример поля с ошибкой валидации</label>
-                            <input id="field2" type="text" class="mt-1 block w-full rounded-md border-red-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="">
-                            <span class="text-xs italic text-red-600">Поле не заполнено</span>
+                            <label for="fieldEmail" class="text-gray-700 font-bold">Email</label>
+                            <input id="fieldEmail" name="email" type="email"
+                                   class="mt-1 block w-full rounded-md border-gray-300 @error('email') border-red-600 @enderror shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                   value="{{ old('email') }}" placeholder="mask@example.com">
+                            @error('email')
+                            <span class="text-xs italic text-red-600">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="block">
-                            <label for="field3" class="text-gray-700 font-bold">Поле Email</label>
-                            <input id="field3" type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="john@example.com">
+                            <label for="fieldPhone" class="text-gray-700 font-bold">Телефон</label>
+                            <input id="fieldPhone" name="phone" type="text"
+                                   class="mt-1 block w-full rounded-md border-gray-300 @error('phone') border-red-600 @enderror shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                   value="{{ old('phone') }}" placeholder="89070803050">
+                            @error('phone')
+                            <span class="text-xs italic text-red-600">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="block">
-                            <label for="field4" class="text-gray-700 font-bold">Поле с выбором даты</label>
-                            <input id="field4" type="date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            <label for="fieldPassword" class="text-gray-700 font-bold">Пароль</label>
+                            <input id="fieldPassword" name="password" type="password"
+                                   class="mt-1 block w-full rounded-md border-gray-300 @error('password') border-red-600 @enderror shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                   placeholder="******">
+                            @error('password')
+                            <span class="text-xs italic text-red-600">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="block">
-                            <label for="field5" class="text-gray-700 font-bold">Выпадающий список</label>
-                            <select id="field5" class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                <option>Corporate event</option>
-                                <option>Wedding</option>
-                                <option>Birthday</option>
-                                <option>Other</option>
-                            </select>
+                            <label for="fieldPasswordConfirmation" class="text-gray-700 font-bold">Подтверждение
+                                пароля</label>
+                            <input id="fieldPasswordConfirmation" name="password_confirmation" type="password"
+                                   class="mt-1 block w-full rounded-md border-gray-300 @error('password') border-red-600 @enderror shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                   placeholder="******">
                         </div>
                         <div class="block">
-                            <label for="field6" class="text-gray-700">Текстарея</label>
-                            <textarea id="field6" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="3"></textarea>
-                        </div>
-                        <div class="block">
-                            <div class="mt-2">
-                                <div>
-                                    <label class="inline-flex items-center cursor-pointer">
-                                        <input type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" checked="">
-                                        <span class="ml-2">Поле - чекбокс</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="block">
-                            <button type="submit" class="inline-block bg-orange hover:bg-opacity-70 focus:outline-none text-white font-bold py-2 px-4 rounded">
-                                Сохранить
+                            <button type="submit"
+                                    class="inline-block bg-orange hover:bg-opacity-70 focus:outline-none text-white font-bold py-2 px-4 rounded">
+                                Регистрация
                             </button>
-                            <button type="reset" class="inline-block bg-gray-400 hover:bg-opacity-70 focus:outline-none text-white font-bold py-2 px-4 rounded">
-                                Отменить
-                            </button>
+                            <a href="{{ route('login') }}"
+                               class="inline-block hover:underline focus:outline-none font-bold py-2 px-4 rounded">
+                                У меня уже есть аккаунт
+                            </a>
                         </div>
                     </div>
                 </div>
