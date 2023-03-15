@@ -23,7 +23,7 @@
                     </div>
                     <div>
                         <p class="font-bold not-italic mt-3 mb-1">Email</p>
-                        <a href="mailto:legat@yandex.ru" class="hover:text-orange mx-2">space@x.com</a>
+                        <a href="mailto:legat@yandex.ru" class="hover:text-orange mx-2">spac@x.com</a>
                     </div>
                 </address>
                 <div>

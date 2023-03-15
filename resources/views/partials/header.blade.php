@@ -1,9 +1,9 @@
 <header class="bg-white">
     <div class="border-b">
-        <div class="container mx-auto block overflow-hidden px-4 sm:px-6 sm:flex sm:justify-between sm:items-center py-4 space-y-4 sm:space-y-0">
+        <div class="container mx-auto block overflow-hidden px-4 sm:px-6 sm:flex sm:justify-between sm:items-center py-1 space-y-4 sm:space-y-0">
             <div class="flex justify-center">
                 <a href="{{ route('home') }}" class="inline-block sm:inline hover:opacity-75">
-                    <img src="{{ asset("storage/logo.png") }}" width="222" height="30" alt="SPACE X">
+                    <img src="{{ asset("storage/logo/logo-6.png") }}" width="100" height=auto alt="SPACX">
                 </a>
             </div>
             <div>

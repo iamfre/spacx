@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
              'password' => bcrypt(3034),
          ]);
 
-         for ($i = 1; $i < 15; $i++) {
+         for ($i = 1; $i < 17; $i++) {
              $price = rand(100000, 9999999);
              Ship::factory()->create([
                  'image' => "ship_$i.png",
