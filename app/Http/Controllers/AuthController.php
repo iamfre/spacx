@@ -10,20 +10,20 @@ class AuthController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('profile');
         }
         return view('auth.login');
     }
 
     public function login(Request $request){
         if (Auth::check()){
-            return redirect()->intended(route('home'));
+            return redirect()->intended(route('profile'));
         }
 
         $formFields = $request->only(['email', 'password']);
 
         if (Auth::attempt($formFields)){
-            return redirect()->intended(route('home'));
+            return redirect()->intended(route('profile'));
         }
 
         return redirect()->route('login')->withErrors([
