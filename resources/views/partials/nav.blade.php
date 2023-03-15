@@ -6,7 +6,7 @@
                         href="{{ route('home') }}">Главная</a></li>
             <li class="px-5 py-2"><a
                         class="{{ Request::is('article') ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange' }}"
-                        href="#">Статьи</a></li>
+                        href="{{ route('posts.index') }}">Статьи</a></li>
             <li class="px-5 py-2"><a
                         class="{{ Request::is('catalog') ? 'text-orange cursor-default' : 'text-gray-600 hover:text-orange' }}"
                         href="{{ route('catalog.index') }}">Каталог</a></li>
