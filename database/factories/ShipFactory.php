@@ -15,10 +15,13 @@ class ShipFactory extends Factory
     {
         return [
             'name' => $this->faker->unique()->word(),
-            'detail' => json_encode([
-                'color' => 'white',
-                'seats' => 4,
-            ]),
+            'detail' => json_encode(
+                [
+                    'цвет' => 'текущий',
+                    'пассажиров' => rand(1, 6),
+                    'описание' => $this->faker->realTextBetween(maxNbChars: 500),
+                ]
+            ),
             'image' => 'no_image.png',
             'price' => rand(100000, 9999999),
             'old_price' => null,

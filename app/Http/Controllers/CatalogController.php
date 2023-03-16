@@ -15,8 +15,11 @@ class CatalogController extends Controller
         ]);
     }
 
-    public function show()
+    public function show($id)
     {
-        //
+        $ship = Ship::query()->findOrFail($id);
+        $ship->detail = json_decode($ship->detail, true);
+
+        return view('catalog.show', ['ship' => $ship]);
     }
 }

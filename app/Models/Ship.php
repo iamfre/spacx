@@ -16,4 +16,8 @@ class Ship extends Model
         'price',
         'old_price',
     ];
+
+    protected $casts = [
+        'detail' => 'array',
+    ];
 }
