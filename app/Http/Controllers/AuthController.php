@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -54,17 +53,10 @@ class AuthController extends Controller
 
         $validateFields = $request->validated();
 
-        if (!empty($validateFields)) {
-            $user = User::create($validateFields);
-        }
+        $user = User::create($validateFields);
 
-        if (isset($user)) {
-            Auth::login($user);
-            return redirect()->route('profile')->withSuccess("Вы успешно зарегистрировались");
-        }
+        Auth::login($user);
 
-        return redirect()->route('registration')->withErrors([
-            'email' => 'Произошла неизвестная ошибка'
-        ]);
+        return redirect()->route('profile')->withSuccess("Вы успешно зарегистрировались");
     }
 }
