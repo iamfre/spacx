@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::query()->orderBy('created_at', 'DESC')->paginate(8);
+        $posts = Post::query()->orderBy('created_at')->paginate(8);
 
         return view('posts.index', ['posts' => $posts]);
     }

@@ -14,7 +14,7 @@
                 @each('partials.ships.item', $ships, 'ship')
             </div>
         </div>
-        <div class="flex justify-around mb-5">
+        <div class="flex justify-around mb-5 mt-5">
             {{ $ships->links() }}
         </div>
     </main>
