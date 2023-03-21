@@ -8,12 +8,12 @@
 
 @section('content')
     <main class="flex-1 container mx-auto bg-white overflow-hidden px-4 sm:px-6">
-        <div class="py-4 pb-8">
+        <div class="py-4 pb-4">
             <h1 class="text-black text-3xl font-bold mb-4">Регистрация</h1>
 
             <form action="{{ route('registration') }}" method="post">
                 @csrf
-                <div class="mt-8 max-w-md">
+                <div class="mt-4 max-w-md">
                     <div class="grid grid-cols-1 gap-6">
                         <div class="block">
                             <label for="fieldName" class="text-gray-700 font-bold">Имя</label>

@@ -31,7 +31,7 @@
                     </div>
                     <div class="flex max-w-xl">
                         <div class="flex-1 border px-4 py-2 bg-gray-200 font-bold">Телефон</div>
-                        <div class="flex-1 border px-4 py-2">8-900-1001</div>
+                        <div class="flex-1 border px-4 py-2">{{ auth()->user()->phone ? phone(auth()->user()->phone) : 'не указан'}}</div>
                     </div>
                     <div class="flex max-w-xl">
                         <div class="flex-1 border px-4 py-2 bg-gray-200 font-bold">Активность</div>

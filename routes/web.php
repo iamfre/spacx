@@ -29,6 +29,6 @@ Route::middleware('guest')->group(function () {
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/contacts', [IndexController::class, 'contacts'])->name('contacts');
 Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
-Route::get('/catalog{id}', [CatalogController::class, 'show'])->name('catalog.show');
+Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('catalog.show');
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
