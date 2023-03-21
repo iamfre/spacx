@@ -1,7 +1,7 @@
 <div class="px-4 py-4 max-w-xl">
     <div class="bg-white shadow-2xl" >
         <div>
-            <a href="#">
+            <a href="{{ route('posts.show', $post->id) }}">
                 <img class="" src="{{ asset("storage/post/$post->image") }}" alt="{{ $post->title }}">
             </a>
         </div>

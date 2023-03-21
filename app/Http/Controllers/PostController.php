@@ -13,8 +13,10 @@ class PostController extends Controller
         return view('posts.index', ['posts' => $posts]);
     }
 
-    public function show()
+    public function show($id)
     {
-        //
+        $post = Post::query()->findOrFail($id);
+
+        return view('posts.show', ['post' => $post]);
     }
 }
