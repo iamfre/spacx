@@ -28,7 +28,7 @@
                         @csrf
 
                         <textarea name="text"
-                                  class=" w-full shadow-inner p-4 border-1 mb-4 rounded-lg focus:ring-orange focus:border-orange focus:shadow-outline text-2xl @error('text') border-red-500 @enderror"
+                                  class="w-full p-4 mb-4 rounded-md text-xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 @error('text') border-red-500 @enderror"
                                   placeholder="Ваш комментарий..." spellcheck="false"></textarea>
 
                         @error('text')
@@ -36,7 +36,7 @@
                         @enderror
 
                         <button type="submit"
-                                class="font-bold py-2 px-4 w-full bg-orange text-lg text-white shadow-md rounded-lg ">
+                                class="font-bold py-2 px-4 w-full bg-orange bg-opacity-95 text-lg text-white shadow-md rounded-lg focus:outline-none focus:bg-opacity-100 hover:bg-opacity-75">
                             Написать
                         </button>
                     </form>

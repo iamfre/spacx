@@ -1,8 +1,8 @@
 <div class="px-4 py-4 max-w-xl">
-    <div class="bg-white shadow-2xl" >
-        <div>
+    <div class="bg-white border border-gray-100 rounded overflow-hidden shadow-lg hover:shadow-2xl" >
+        <div class="">
             <a href="{{ route('posts.show', $post->id) }}">
-                <img class="" src="{{ asset("storage/post/$post->image") }}" alt="{{ $post->title }}">
+                <img class="hover:opacity-90 object-cover" src="{{ asset("storage/post/$post->image") }}" alt="{{ $post->title }}">
             </a>
         </div>
 

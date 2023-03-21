@@ -11,18 +11,6 @@
         <div class="py-4 pb-8">
             <h1 class="text-black text-3xl font-bold mb-4">Регистрация</h1>
 
-            {{--            <div class="my-4">--}}
-            {{--                <div class="px-4 py-3 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">--}}
-            {{--                    <p>Поле email обязательно для заполнения</p>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-
-            {{--            <div class="my-4">--}}
-            {{--                <div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">--}}
-            {{--                    <p>Вы успешно зарегистрированы</p>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
-
             <form action="{{ route('registration') }}" method="post">
                 @csrf
                 <div class="mt-8 max-w-md">
