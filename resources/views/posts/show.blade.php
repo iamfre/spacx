@@ -28,7 +28,7 @@
                         @csrf
 
                         <textarea name="text"
-                                  class="w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl @error('text') border-red-500 @enderror"
+                                  class=" w-full shadow-inner p-4 border-1 mb-4 rounded-lg focus:ring-orange focus:border-orange focus:shadow-outline text-2xl @error('text') border-red-500 @enderror"
                                   placeholder="Ваш комментарий..." spellcheck="false"></textarea>
 
                         @error('text')
