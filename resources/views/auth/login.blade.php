@@ -34,6 +34,9 @@
                             <p>{{ $message }}</p>
                         </div>
                         @enderror
+                        <a href="{{ route('forgot-password') }}" class="inline-block hover:underline focus:outline-none font-bold ">
+                            Забыл пароль
+                        </a>
                         <div class="block">
                             <button type="submit" class="inline-block bg-orange hover:bg-opacity-70 focus:outline-none text-white font-bold py-2 px-4 rounded">
                                 Войти

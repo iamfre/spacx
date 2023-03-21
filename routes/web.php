@@ -28,6 +28,39 @@ Route::middleware('guest')->group(function () {
     Route::post('/registration', [AuthController::class, 'register']);
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
+
+
+    Route::get('/forgot-password', [AuthController::class, 'forgotPasswordForm'])->name('forgot-password');
+    Route::post('/forgot-password', [AuthController::class, 'forgotPasswordProcess'])->name('password.email');
+    Route::get('/reset-password/{token}', function ($token) {
+        return view('auth.reset-password', ['token' => $token]);})->name('password.reset');
+
+    Route::post('/reset-password', function (\Illuminate\Http\Request $request) {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+        ]);
+
+        $status = \Illuminate\Support\Facades\Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user, $password) {
+                $user->forceFill([
+                    'password' => $password
+                ])->setRememberToken(\Illuminate\Support\Str::random(60));
+
+                $user->save();
+
+                event(new \Illuminate\Auth\Events\PasswordReset($user));
+            }
+        );
+
+        return $status === \Illuminate\Support\Facades\Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('success', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
+    })->name('password.update');
+
+
 });
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
