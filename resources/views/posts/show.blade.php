@@ -23,24 +23,28 @@
             </div>
 
             <div>
-                <section class="rounded-b-lg mt-4">
-                    <form method="POST" action="">
-                        @csrf
+                <section class="rounded-b-lg mt-10">
+                    @auth()
+                        <form method="POST" action="">
+                            @csrf
 
-                        <textarea name="text"
-                                  class="w-full p-4 mb-4 rounded-md text-xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 @error('text') border-red-500 @enderror"
-                                  placeholder="Ваш комментарий..." spellcheck="false"></textarea>
+                            <textarea name="text"
+                                      class="w-full p-4 mb-1 rounded-md text-xl border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 @error('text') border-red-500 @enderror"
+                                      placeholder="Ваш комментарий..." spellcheck="false"></textarea>
 
-                        @error('text')
-                        <p class="text-red-500">{{ $message }}</p>
-                        @enderror
+                            @error('text')
+                            <p class="text-red-500">{{ $message }}</p>
+                            @enderror
 
-                        <button type="submit"
-                                class="font-bold py-2 px-4 w-full bg-orange bg-opacity-95 text-lg text-white shadow-md rounded-lg focus:outline-none focus:bg-opacity-100 hover:bg-opacity-75">
-                            Написать
-                        </button>
-                    </form>
-
+                            <button type="submit"
+                                    class="mb-6 font-bold py-2 px-4 w-full bg-orange bg-opacity-95 text-lg text-white shadow-md rounded-lg focus:outline-none focus:bg-opacity-100 hover:bg-opacity-75">
+                                Написать
+                            </button>
+                        </form>
+                    @endauth
+                    <div class="">
+                        <h4 class="font-bold text-lg text-gray-400 ">Комментарии</h4>
+                    </div>
                     <div id="task-comments" class="pt-4">
                         <div class="bg-white rounded-lg p-3  flex flex-col justify-center items-center md:items-start shadow-lg mb-4">
                             <div class="flex flex-row justify-center mr-2">
