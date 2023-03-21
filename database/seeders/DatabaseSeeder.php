@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AdminUser;
+use App\Models\Post;
 use App\Models\Ship;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -38,5 +39,7 @@ class DatabaseSeeder extends Seeder
                  'old_price' => rand(0, 3) > 2 ? $price + rand(10000, 100000) : null,
              ]);
          }
+
+        Post::factory(10)->create();
     }
 }

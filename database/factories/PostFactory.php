@@ -14,7 +14,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->unique()->sentence(rand(1, 5)),
+            'description' => $this->faker->realTextBetween(minNbChars: 50, maxNbChars: 250),
+            'text' => $this->faker->realTextBetween(maxNbChars: 700),
+            'image' => $this->faker->image(dir: 'storage/app/public/post', fullPath: false),
         ];
     }
 }
