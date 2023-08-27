@@ -1,17 +1,20 @@
-<nav class="font-sans flex flex-col text-center content-center sm:flex-row sm:text-left sm:justify-between py-2 px-6 bg-white shadow sm:items-baseline w-full">
-    <div class="mb-2 sm:mb-0 inner text-center">
-        <a href="#" class="text-xl no-underline text-grey-darkest hover:text-blue-dark font-sans font-bold">SPACE</a><br>
-        <span class="text-sm text-grey-dark ">X</span>
-
+<header class="bg-white">
+    <div class="border-b">
+        <div class="container mx-auto block overflow-hidden px-4 sm:px-6 sm:flex sm:justify-between sm:items-center py-1 space-y-4 sm:space-y-0">
+            <div class="flex justify-center">
+                <a href="{{ route('home') }}" class="inline-block sm:inline hover:opacity-75">
+                    <img src="{{ asset("storage/logo/logo.png") }}" width="100" height=auto alt="SPACX">
+                </a>
+            </div>
+            <div class="flex justify-center sm:justify-end items-center space-x-8 text-sm">
+                @auth()
+                    @include('partials.auth')
+                @endauth
+                @guest()
+                    @include('partials.guest')
+                @endguest
+            </div>
+        </div>
     </div>
-
-    <div class="sm:mb-0 self-center">
-        @auth("web")
-            <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Выйти</a>
-        @endauth
-
-        @guest("web")
-            <a href="#" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
-        @endguest
-    </div>
-</nav>
+    @include('partials.nav')
+</header>

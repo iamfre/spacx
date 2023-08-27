@@ -6,20 +6,22 @@
 
     <title>@yield('title', config('app.name'))</title>
 
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ asset('/css/form.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/tailwind.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
-<body>
-    <header>
+<body class="bg-white text-gray-600 font-sans leading-normal text-base tracking-normal flex min-h-screen flex-col">
+    <div class="wrapper flex flex-1 flex-col bg-gray-100">
+
         @yield('header')
-    </header>
-    <main>
+
         @yield('content')
-    </main>
-    <footer>
+
         @yield('footer')
-    </footer>
-    <script src="/js/app.js"></script>
-    @stack('scripts')
+
+        <script src="{{ asset('/js/app.js') }}"></script>
+        @stack('scripts')
+    </div>
 </body>
 </html>
