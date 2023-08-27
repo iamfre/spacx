@@ -176,7 +176,7 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-10 h-10">
                                             <img class="w-10 h-10 rounded-full"
-                                                 src="https://source.unsplash.com/user/erondu"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1024px-Anonymous_emblem.svg.png"
                                                  alt="admin dashboard ui">
                                         </div>
 
@@ -221,7 +221,7 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-10 h-10">
                                             <img class="w-10 h-10 rounded-full"
-                                                 src="https://source.unsplash.com/user/erondu"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1024px-Anonymous_emblem.svg.png"
                                                  alt="admin dashboard ui">
                                         </div>
 
@@ -266,7 +266,7 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-10 h-10">
                                             <img class="w-10 h-10 rounded-full"
-                                                 src="https://source.unsplash.com/user/erondu"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1024px-Anonymous_emblem.svg.png"
                                                  alt="admin dashboard ui">
                                         </div>
 
@@ -311,7 +311,7 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-10 h-10">
                                             <img class="w-10 h-10 rounded-full"
-                                                 src="https://source.unsplash.com/user/erondu"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1024px-Anonymous_emblem.svg.png"
                                                  alt="admin dashboard ui">
                                         </div>
 
@@ -356,7 +356,7 @@
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 w-10 h-10">
                                             <img class="w-10 h-10 rounded-full"
-                                                 src="https://source.unsplash.com/user/erondu"
+                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/1024px-Anonymous_emblem.svg.png"
                                                  alt="admin dashboard ui">
                                         </div>
 

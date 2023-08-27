@@ -20,16 +20,16 @@ class DatabaseSeeder extends Seeder
          User::factory(10)->create();
 
          User::factory()->create([
-             'name' => 'Zycs',
-             'email' => 'zycs@yandex.ru',
-             'phone' => 89090406030,
-             'password' => 3034,
+             'name' => 'zycs',
+             'email' => 'zycs@test.ru',
+             'phone' => 89040506030,
+             'password' => 'pass',
          ]);
 
          AdminUser::factory()->create([
              'name' => 'admin',
-             'email' => 'zycs@yandex.ru',
-             'password' => bcrypt(3034),
+             'email' => 'admin@spacx.ru',
+             'password' => bcrypt('pass'),
          ]);
 
          for ($i = 1; $i < 17; $i++) {

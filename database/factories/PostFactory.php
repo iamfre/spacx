@@ -13,11 +13,15 @@ class PostFactory extends Factory
      */
     public function definition()
     {
+        // Faker image broken. Load images - public/post/image (1).png
+        $num = rand(1,100);
+        $randomImage = "post ($num).png";
+
         return [
             'title' => $this->faker->unique()->sentence(rand(1, 5)),
             'description' => $this->faker->realTextBetween(minNbChars: 50, maxNbChars: 250),
             'text' => $this->faker->realTextBetween(maxNbChars: 700),
-            'image' => $this->faker->image(dir: 'storage/app/public/post', fullPath: false),
+            'image' => $randomImage,
         ];
     }
 }
