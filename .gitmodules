@@ -1,0 +1,3 @@
+[submodule "Modules/Telegram"]
+	path = Modules/Telegram
+	url = git@github.com:iamfre/telegram.git
